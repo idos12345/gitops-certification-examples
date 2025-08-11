@@ -55,5 +55,5 @@ spec:
   containers:
   - name: my-container
     image: busybox
-    command: ["/bin/sh", "-c", "sleep 1"]
+    command: ["/bin/sh", "-c", "sleep 3600"]
   serviceAccountName: my-app-sa
