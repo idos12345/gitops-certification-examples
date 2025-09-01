@@ -1,16 +1,16 @@
-apiVersion: batch/v1
-kind: Job
-metadata:
-  name: {{ .Release.Name }}-presync-delay
-  annotations:
-    argocd.argoproj.io/hook: PreSync
-    argocd.argoproj.io/hook-delete-policy: HookSucceeded
-spec:
-  backoffLimit: 0
-  template:
-    spec:
-      restartPolicy: Never
-      containers:
-        - name: delay
-          image: busybox:1.36
-          command: ["sh", "-c", "echo 'Delaying sync by 30s'; sleep 30"]
+# apiVersion: batch/v1
+# kind: Job
+# metadata:
+#   name: {{ .Release.Name }}-presync-delay
+#   annotations:
+#     argocd.argoproj.io/hook: PreSync
+#     argocd.argoproj.io/hook-delete-policy: HookSucceeded
+# spec:
+#   backoffLimit: 0
+#   template:
+#     spec:
+#       restartPolicy: Never
+#       containers:
+#         - name: delay
+#           image: busybox:1.36
+#           command: ["sh", "-c", "echo 'Delaying sync by 30s'; sleep 30"]
